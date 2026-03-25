@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Planner / Task Viewer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="container nav-bar">
+        <h1>Daily Planner</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+        </nav>
+    </div>
+</header>
+
+<section class="hero container">
+    <div class="hero-text">
+        <h2>Daily Planner / Task Viewer</h2>
+        <p>This website helps users add daily tasks, track task status, and view task completion summary in a simple and organized way.</p>
+        <button id="welcomeBtn">Start Planning</button>
+    </div>
+
+    <div class="hero-image">
+        <img src="images/planner.jpg" alt="Planner image">
+    </div>
+</section>
+
+<main class="container main-grid">
+    <section class="card">
+        <h2>Add Task</h2>
+
+        <form id="taskForm" class="task-form">
+            <div class="form-group">
+                <label for="taskName">Task Name</label>
+                <input type="text" id="taskName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="taskTime">Task Time</label>
+                <input type="time" id="taskTime" required>
+            </div>
+
+            <div class="form-group">
+                <label for="taskPriority">Priority</label>
+                <select id="taskPriority">
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="taskStatus">Status</label>
+                <select id="taskStatus">
+                    <option value="Pending">Pending</option>
+                    <option value="Completed">Completed</option>
+                </select>
+            </div>
+
+            <div class="form-group button-group full-button">
+                <button type="submit">Add Task</button>
+            </div>
+        </form>
+    </section>
+
+    <section class="card">
+        <h2>Summary</h2>
+
+        <div class="summary-boxes">
+            <div class="summary-item">
+                <h3>Total Tasks</h3>
+                <p id="total">0</p>
+            </div>
+
+            <div class="summary-item">
+                <h3>Completed</h3>
+                <p id="completed">0</p>
+            </div>
+
+            <div class="summary-item">
+                <h3>Pending</h3>
+                <p id="pending">0</p>
+            </div>
+
+            <div class="summary-item">
+                <h3>Completion</h3>
+                <p id="percentage">0%</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="card full-width">
+        <div class="table-top">
+            <h2>Task List</h2>
+            <button id="clearBtn" class="danger-btn">Clear Completed</button>
+        </div>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Name</th>
+                        <th>Time</th>
+                        <th>Priority</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="taskTable"></tbody>
+            </table>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <p>Daily Planner / Task Viewer Project using HTML, CSS, and JavaScript</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
